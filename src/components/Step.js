@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 
 const Step = ({ items }) => {
   const [activeStep, setActiveStep] = useState(null);
-  const [hour, setHour] = useState(null);
+  const [hour, setHour] = useState(new Date().getHours());
 
   const getHour = () => {
-    return setHour(new Date().getHours());
+    if (hour !== new Date().getHours()) return setHour(new Date().getHours());
   };
 
   const isCurrentStep = () => {
